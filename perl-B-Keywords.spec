@@ -4,14 +4,14 @@
 #
 Name     : perl-B-Keywords
 Version  : 1.19
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.19.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libb/libb-keywords-perl/libb-keywords-perl_1.18-1.debian.tar.xz
 Summary  : 'Lists of reserved barewords and symbol names'
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: perl-B-Keywords-license
+Requires: perl-B-Keywords-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -25,7 +25,7 @@ print join "\n", @Symbols,
 %package dev
 Summary: dev components for the perl-B-Keywords package.
 Group: Development
-Provides: perl-B-Keywords-devel
+Provides: perl-B-Keywords-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-B-Keywords package.
@@ -68,13 +68,13 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-B-Keywords
-cp LICENSE %{buildroot}/usr/share/doc/perl-B-Keywords/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-B-Keywords/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-B-Keywords
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-B-Keywords/LICENSE
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-B-Keywords/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -83,13 +83,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/B/Keywords.pm
+/usr/lib/perl5/vendor_perl/5.26.1/B/Keywords.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/B::Keywords.3
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-B-Keywords/LICENSE
-/usr/share/doc/perl-B-Keywords/deblicense_copyright
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-B-Keywords/LICENSE
+/usr/share/package-licenses/perl-B-Keywords/deblicense_copyright
