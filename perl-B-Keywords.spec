@@ -4,7 +4,7 @@
 #
 Name     : perl-B-Keywords
 Version  : 1.19
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.19.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libb/libb-keywords-perl/libb-keywords-perl_1.18-1.debian.tar.xz
@@ -83,7 +83,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/B/Keywords.pm
+/usr/lib/perl5/vendor_perl/5.28.0/B/Keywords.pm
 
 %files dev
 %defattr(-,root,root,-)
