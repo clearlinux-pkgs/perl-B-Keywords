@@ -4,7 +4,7 @@
 #
 Name     : perl-B-Keywords
 Version  : 1.20
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.20.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.20.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libb/libb-keywords-perl/libb-keywords-perl_1.18-1.debian.tar.xz
