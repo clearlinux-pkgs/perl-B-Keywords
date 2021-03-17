@@ -4,7 +4,7 @@
 #
 Name     : perl-B-Keywords
 Version  : 1.22
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.22.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.22.tar.gz
 Summary  : 'Lists of reserved barewords and symbol names'
@@ -100,4 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/B/Keywords.pm
+/usr/lib/perl5/vendor_perl/5.32.1/B/Keywords.pm
