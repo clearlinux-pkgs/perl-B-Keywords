@@ -5,7 +5,7 @@
 #
 Name     : perl-B-Keywords
 Version  : 1.26
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RU/RURBAN/B-Keywords-1.26.tar.gz
 Summary  : 'Lists of reserved barewords and symbol names'
